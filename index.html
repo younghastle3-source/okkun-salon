@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>おっくん｜ハイブリッドアスリート向けオンラインサロン</title>
+<title>おっくん｜ハイブリッドレース×団体指導</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
@@ -22,12 +22,7 @@
     width:132px; height:132px; border-radius:50%; object-fit:cover; object-position:center top;
     border:4px solid rgba(255,255,255,0.3); margin-bottom:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);
   }
-  .tag{
-    display:inline-block; background:rgba(255,193,7,0.15); color:#ffc107;
-    border:1px solid rgba(255,193,7,0.4); border-radius:999px; padding:5px 14px;
-    font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:14px;
-  }
-  header h1{ font-size:23px; font-weight:800; letter-spacing:1px; margin-bottom:8px; }
+  header h1{ font-size:21px; font-weight:800; letter-spacing:0.5px; margin-bottom:8px; }
   header .subtitle{ font-size:13px; color:rgba(255,255,255,0.72); letter-spacing:0.5px; }
 
   section{ padding:32px 20px; max-width:640px; margin:0 auto; }
@@ -46,26 +41,31 @@
   .proof-card .num{ font-size:22px; font-weight:900; color:#e63946; display:block; margin-bottom:4px; }
   .proof-card .label{ font-size:12px; color:#666; }
 
-  #concept .list-block{ background:#f9f9f9; border-radius:12px; padding:18px; margin-bottom:12px; }
-  .list-item{ display:flex; align-items:flex-start; gap:10px; padding:8px 0; font-size:14px; }
-  .list-item .icon{ font-size:17px; flex-shrink:0; margin-top:1px; }
+  #offers{ padding-top:28px; }
+  .offer-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+  .offer-card{
+    background:#fff; border-radius:16px; padding:22px 20px; box-shadow:0 2px 12px rgba(0,0,0,0.06);
+    position:relative;
+  }
+  .offer-card .icon{ font-size:26px; margin-bottom:10px; display:block; }
+  .offer-card h3{ font-size:16px; font-weight:800; margin-bottom:8px; color:#1a1a2e; }
+  .offer-card p{ font-size:14px; color:#555; margin-bottom:16px; }
+  .offer-card .soon-tag{
+    display:inline-block; background:#fff3cd; color:#a06c00; border-radius:999px;
+    padding:3px 11px; font-size:11px; font-weight:700; letter-spacing:0.5px; margin-bottom:10px;
+  }
+  .offer-btn{
+    display:inline-block; background:linear-gradient(135deg,#00b900,#00a000); color:#fff;
+    font-weight:800; font-size:14px; padding:12px 26px; border-radius:999px; text-decoration:none;
+    box-shadow:0 3px 12px rgba(0,185,0,0.3);
+  }
+  .offer-btn.ghost{
+    background:#1a1a2e; box-shadow:0 3px 12px rgba(26,26,46,0.25);
+  }
 
   .wip-note{
     background:#f0f4ff; border-radius:12px; padding:16px; font-size:13px; color:#444; margin-top:16px;
   }
-
-  #cta-main{
-    background:#1a1a2e; color:#fff; padding:36px 20px; margin:28px 0 0; text-align:center;
-  }
-  #cta-main .section-title{ color:#fff; justify-content:center; }
-  #cta-main .section-title::after{ display:none; }
-  #cta-main p.sub{ font-size:14px; color:rgba(255,255,255,0.75); margin-bottom:22px; }
-  .line-btn{
-    display:inline-block; background:linear-gradient(135deg,#00b900,#00a000); color:#fff;
-    font-weight:800; font-size:16px; padding:16px 36px; border-radius:999px; text-decoration:none;
-    box-shadow:0 4px 16px rgba(0,185,0,0.35);
-  }
-  .perk-note{ font-size:12px; color:rgba(255,255,255,0.6); margin-top:16px; }
 
   footer{ text-align:center; padding:22px; font-size:12px; color:#999; }
 </style>
@@ -74,13 +74,12 @@
 
 <header>
   <img class="header-photo" src="okkun-profile.jpg" alt="おっくん">
-  <div class="tag">COMING SOON ／ 先行案内</div>
-  <h1>おっくんオンラインサロン</h1>
-  <div class="subtitle">ハイブリッドアスリートのための、疲れてからでも動ける身体づくり</div>
+  <h1>おっくん｜ハイブリッドレース×団体指導</h1>
+  <div class="subtitle">HYROX Chiba 1:30:13完走 ／ 大学アメフト部 外部コーチ</div>
 </header>
 
 <section id="intro">
-  <p class="lead">ハイブリッドレース1:30:13完走の実践者、大学アメフト部のストレングス指導——5年のパーソナル経験を経て、専用ジムなしでHYROXに挑戦しています。ここまで発信してきた内容を、もっと体系的に学べる場所を今準備しています。</p>
+  <p class="lead">ハイブリッドレース1:30:13完走の実践者、大学アメフト部のストレングス指導——5年のパーソナル経験を経て、専用ジムなしでHYROXに挑戦しています。</p>
   <div class="highlight-quote">
     筋トレのための筋トレじゃなく、「疲れてからでも走れて、押せて、引ける身体」を作るための知識を、ちゃんと順を追って渡したい。
   </div>
@@ -92,23 +91,26 @@
   </div>
 </section>
 
-<section id="concept">
-  <h2 class="section-title">どんな場所にする予定か</h2>
-  <div class="list-block">
-    <div class="list-item"><span class="icon">🏋️</span><span>ハイブリッドトレーニングのような「疲れてからでも動ける身体」を作る知識</span></div>
-    <div class="list-item"><span class="icon">🫁</span><span>呼吸・可動域・動作パターンから積み上げる、怪我をしない順番の組み方</span></div>
-    <div class="list-item"><span class="icon">🤝</span><span>一人だと続かない人のための、一緒に取り組める環境</span></div>
+<section id="offers">
+  <h2 class="section-title">お手伝いできること</h2>
+  <div class="offer-grid">
+    <div class="offer-card">
+      <span class="icon">🏈</span>
+      <h3>チーム・部活動のS&amp;Cサポート</h3>
+      <p>大学アメフト部で外部コーチとして指導中。動きを良くする・怪我をしにくくするためのストレングス&amp;コンディショニング指導を、チーム単位で承っています。</p>
+      <a class="offer-btn ghost" href="https://lin.ee/NO7C6EUb" target="_blank" rel="noopener">💬 チーム指導の相談をする</a>
+    </div>
+    <div class="offer-card">
+      <span class="icon">🏃</span>
+      <span class="soon-tag">COMING SOON</span>
+      <h3>動ける身体を作る8週間プログラム</h3>
+      <p>専用ジムがなくても、エニタイムフィットネス等の器具だけでHYROX対策はできます。初出場で1:30台を出した実践メニューを、8週間プログラムとして準備中です。</p>
+      <a class="offer-btn" href="https://lin.ee/NO7C6EUb" target="_blank" rel="noopener">💬 情報が届いたらLINEで知る</a>
+    </div>
   </div>
   <div class="wip-note">
-    ※ 現在カリキュラム・料金ともに設計中です。先行登録していただいた方には、内容が固まり次第いちばん先にご案内し、早期登録特典も予定しています。
+    ※ 8週間プログラムは現在内容を設計中です。準備が整い次第、LINE登録していただいた方に一番先にお知らせします。
   </div>
-</section>
-
-<section id="cta-main">
-  <h2 class="section-title">先行案内を受け取る</h2>
-  <p class="sub">LINE登録だけで、今すぐ完了します</p>
-  <a class="line-btn" href="https://lin.ee/NO7C6EUb" target="_blank" rel="noopener">💬 LINEで先行登録する</a>
-  <p class="perk-note">料金は発生しません。案内が不要になったらいつでもブロックできます。</p>
 </section>
 
 <footer>
